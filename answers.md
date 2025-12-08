@@ -19,13 +19,20 @@ Let us assume we have our divide and conqueor problem, P, and break it into to s
 3. **Randomization**
 
 - 3a. 
-The probability quicksort does omega(n^2) comparisons is (2/n^2). For this event to happen, the first or last term would need to be chosen every time consecutively throughout the entire sorting process.
-*****
+Our 'a' is O(n^2), and our E[X] is the expected value of Quicksort, nlogn; so according to Markov's inequality, the probability Quicksort does at least n^2 computations is at most nlogn/(n^2) which simplifies to log(n)/n.
 
 - 3b.
+nlogn/(((10^c)n)logn) = 1/(10^c)
+The probability of larger quantities of work are significantly smaller than the probability of our expected average. This means that our 'concentration' for Quicksort is strong around our average and diminishes harshly as we deviate farther from it.
 
 4. **Greedy Algorithms**
+Let us assume that we have a schedule, S, that does not have its shortest job first. The first job adds its processing time to every other job's waiting time. If the first job's processing time was smaller, less time would logically be added to every other job's waiting time. It would, then, be optimal to have the shortest job first as that minimizes the total wait time.
+Let us assume that there is an optimal schedule that does not have the shortest job first. This schedule currently adds its first job's processing time to n-1 other jobs. It would be more optimal to add less time to other jobs by placing the shorter job first as that job would add its time n-1 times, and the original first job would now only add its time to n-2 other jobs.
+
 
 5. **Dynamic Programming**
 
+
 6. **Graphs**
+*I'm assuming that the largest weight 'edge' in the cycle cannot be in any MST.
+Let us assume we have a MST that does contain the heaviest edge, e, of a cycle, c. If we remove e, we will split our tree into two subtrees that could be joined using any edge from cycle c. If we join the graph using an edge that isn't e, we will create a new MST that is smaller than our first MST which creates a contradiction. Therefore, wthe largest weight edge in any cycle cannot be contained in a minimum spanning tree.
