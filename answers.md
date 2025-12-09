@@ -31,7 +31,8 @@ Let us assume that there is an optimal schedule that does not have the shortest 
 
 
 5. **Dynamic Programming**
-
+To achieve maximum span, you must have a problem that requires each step to be dependent on the prior step. An example of this would be computing the answer to an expression where every step is not associative. Ex: Compute ((((((a+b)⋅c)+d)⋅e)+f)⋅g).
+To achieve ideal span, you must have a problem that can be repeatedly reduced into equal segments until reaching the base case. An example of this would be using Borůvka's algorithm to repeatedly connect vertices until all a MST is created. The unconnected portions of the graph will reduce by at least half at each step giving the ideal span.
 
 6. **Graphs**
 *I'm assuming that the largest weight 'edge' in the cycle cannot be in any MST.
